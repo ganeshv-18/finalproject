@@ -1,0 +1,22 @@
+<div class="category"></div>
+<div class="container" id="category">
+  <hr>
+  <h1>Update Category Details</h1>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-group">
+          <label for="categoryName">categoryName:</label>
+          <input formControlName="categoryName"
+          id="categoryName"
+          type="text"
+          [(ngModel)]="category.categoryName" class="form-control">
+          <div *ngIf="f['categoryName'].touched && f['categoryName'].invalid" class="alert alert-danger">
+              <div *ngIf="f['categoryName'].errors && f['categoryName'].errors['required']">categoryName is required.</div>
+          </div>
+      </div>
+      <br/>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+      &nbsp;<a routerLink="/dashboard/categorylist" class="btn btn-primary">Back</a>
+  </form>
+</div>

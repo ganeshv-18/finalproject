@@ -1,0 +1,12 @@
+<mat-toolbar class="fixed-top">
+  <span>
+    <a routerLink="/"><img src="https://i.imgur.com/nXgI5iT.png" width="5%"> LaptopHub</a>
+  </span>
+  <span class="spacer"></span>
+  <ul>
+   <li> <button href="" mat-flat-button routerLink="/dashboard/addadminuser">Add Users</button> </li>
+   <li class="nav-item" *ngif="isloggedin">
+    <button (click)="onLogout()">Logout</button>
+  </li>
+  </ul>
+ </mat-toolbar>

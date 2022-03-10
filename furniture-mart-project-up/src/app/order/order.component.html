@@ -1,0 +1,36 @@
+<form>
+<div class="card mt-50 mb-50">
+  <div class="col d-flex"><span class="text-muted" id="orderno">order #546924</span></div>
+  <div class="gap">
+      <div class="col-2 d-flex mx-auto"> </div>
+  </div>
+  <div class="title mx-auto"> Thank you for your order! </div>
+  <div class="main"> <span id="sub-title">
+          <p><b>Payment Summary</b></p>
+      </span>
+      <table *ngFor="let productOrder of productOrders">
+          <tr>
+            <td><img class="img-fluid" [src]="productOrder.imagePath"> </td>
+
+              <td><p><b>productOrder.productName</b></p></td>
+
+              <td>
+                  <p class="text-muted">productOrder.productDescription.split('|')[0]</p>
+              </td>
+
+          <td>
+              <p><b>productOrder.order.totalamount </b></p>
+          <td>
+          </tr>
+        </table>
+
+      <hr>
+      <div class="total">
+          <div class="row">
+              <div class="col"> <b> Total:</b> </div>
+              <div class="col d-flex justify-content-end"> <b>{{ displayTotalAmount()}}</b> </div>
+          </div> <button  class="btn d-flex mx-auto" > Payment </button>
+      </div>
+    </div>
+</div>
+</form>
